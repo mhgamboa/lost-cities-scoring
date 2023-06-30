@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Head from "next/head";
 import Expedition from "~/components/Expedition";
 
@@ -12,12 +12,19 @@ export default function Home() {
     purple: 0,
   });
 
-  const updateScore = (name: string, score: number) => {
+  const updateScore = useCallback((name: string, score: number) => {
     setScores((prevScores) => ({
       ...prevScores,
       [name]: score,
     }));
-  };
+  }, []);
+
+  // const updateScore = (name: string, score: number) => {
+  //   setScores((prevScores) => ({
+  //     ...prevScores,
+  //     [name]: score,
+  //   }));
+  // };
 
   return (
     <>
