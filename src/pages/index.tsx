@@ -19,13 +19,6 @@ export default function Home() {
     }));
   }, []);
 
-  // const updateScore = (name: string, score: number) => {
-  //   setScores((prevScores) => ({
-  //     ...prevScores,
-  //     [name]: score,
-  //   }));
-  // };
-
   return (
     <>
       <Head>

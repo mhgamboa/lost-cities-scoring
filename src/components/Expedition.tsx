@@ -28,6 +28,7 @@ export default function Expedition({ name, updateScore }: props) {
 
     setScoringItems((prevState) => {
       const newState: ScoringItem[] = [...prevState];
+
       active
         ? setExpeditionScore((prevScore) => prevScore - amount)
         : setExpeditionScore((prevScore) => prevScore + amount);
@@ -35,19 +36,6 @@ export default function Expedition({ name, updateScore }: props) {
       active = newState[itemIndex][1];
       return newState;
     });
-
-    // active
-    //   ? setExpeditionScore((prevScore) => prevScore - amount)
-    //   : setExpeditionScore((prevScore) => prevScore + amount);
-
-    // setScoringItems((prevState) => {
-    //   const newState: ScoringItem[] = [...prevState];
-
-    //   newState[itemIndex][1] = !newState[itemIndex][1];
-
-    //   console.log("newState: ", newState);
-    //   return newState;
-    // });
   }
 
   useEffect(() => {
@@ -55,6 +43,8 @@ export default function Expedition({ name, updateScore }: props) {
   }, [expeditionScore, name, updateScore]);
 
   useEffect(() => {
+    // let totalSum = (sum - 20) x (handshakeCount + 1) + 20(only if you have 8 or more cards)
+    // cardCount >=8 && (totalSum + 20)
     console.log("scoringItems: ", scoringItems);
   }, [scoringItems]);
 
