@@ -37,8 +37,9 @@ export default function Expedition({ name, score, updateScore }: props) {
       active
         ? setExpeditionScore((prevScore) => prevScore - amount)
         : setExpeditionScore((prevScore) => prevScore + amount);
-      newState[itemIndex][1] = !newState[itemIndex][1];
-      active = newState[itemIndex][1];
+      newState[itemIndex]![1] = !newState[itemIndex]![1];
+      active = newState[itemIndex]![1];
+
       return newState;
     });
   }
