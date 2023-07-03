@@ -30,11 +30,41 @@ export default function Home() {
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
           <h1 className="text-center text-5xl font-extrabold tracking-tight text-yellow-200 sm:text-[5rem]">
             Lost Cities Scoring Calculator
-            {scores.volcano}
+            {scores.volcano} {scores.snow}{" "}
+            {Object.values(scores).reduce((acc, curr) => acc + curr, 0)}
           </h1>
           {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8"></div> */}
           <div className="flex">
-            <Expedition name="volcano" updateScore={updateScore} />
+            <Expedition
+              name="volcano"
+              updateScore={updateScore}
+              score={scores.volcano}
+            />
+            <Expedition
+              name="snow"
+              updateScore={updateScore}
+              score={scores.snow}
+            />
+            <Expedition
+              name="sands"
+              updateScore={updateScore}
+              score={scores.sands}
+            />
+            <Expedition
+              name="ocean"
+              updateScore={updateScore}
+              score={scores.ocean}
+            />
+            <Expedition
+              name="volcano"
+              updateScore={updateScore}
+              score={scores.volcano}
+            />
+            <Expedition
+              name="purple"
+              updateScore={updateScore}
+              score={scores.purple}
+            />
           </div>
         </div>
       </main>
