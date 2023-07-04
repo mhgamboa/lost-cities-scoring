@@ -26,19 +26,18 @@ export default function Home() {
         <meta name="description" content="Lost Cities Scoring" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="flex min-h-screen flex-col items-center bg-gradient-to-br from-blue-300 to-indigo-400">
+      <main className="flex min-h-screen flex-col items-center bg-gradient-to-br from-indigo-400 to-blue-300">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
           <h1 className="text-center text-5xl font-extrabold tracking-tight text-yellow-200 sm:text-[5rem]">
-            Lost Cities Scoring Calculator
-            {scores.volcano} {scores.snow}{" "}
-            {Object.values(scores).reduce((acc, curr) => acc + curr, 0)}
+            {Object.values(scores).reduce((acc, curr) => acc + curr, 0)} Points
           </h1>
+
           {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8"></div> */}
-          <div className="flex">
+          <section className="flex w-full">
             <Expedition
-              name="volcano"
+              name="sands"
               updateScore={updateScore}
-              score={scores.volcano}
+              score={scores.sands}
             />
             <Expedition
               name="snow"
@@ -46,14 +45,14 @@ export default function Home() {
               score={scores.snow}
             />
             <Expedition
-              name="sands"
-              updateScore={updateScore}
-              score={scores.sands}
-            />
-            <Expedition
               name="ocean"
               updateScore={updateScore}
               score={scores.ocean}
+            />
+            <Expedition
+              name="jungle"
+              updateScore={updateScore}
+              score={scores.jungle}
             />
             <Expedition
               name="volcano"
@@ -65,7 +64,7 @@ export default function Home() {
               updateScore={updateScore}
               score={scores.purple}
             />
-          </div>
+          </section>
         </div>
       </main>
     </>
